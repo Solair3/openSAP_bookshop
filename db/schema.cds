@@ -1,6 +1,5 @@
 namespace sap.capire.bookshop;
 using { Currency, managed, cuid } from '@sap/cds/common';
-using { sap.capire.products.Products } from '../products';
 
 entity Books : managed {
   key ID : Integer;
@@ -10,11 +9,9 @@ entity Books : managed {
   stock  : Integer;
   price  : Decimal(9,2);
   currency : Currency;
+
 }
 
-entity Magazines : Products {
-    publisher: String;
-}
 @cds.autoexpose
 entity Authors : managed {
   key ID : Integer;
@@ -37,15 +34,4 @@ entity OrderItems : cuid {
   book      : Association to Books;
   amount    : Integer;
   netAmount : Decimal(9,2);
-}
-
-entity Movies: additionalInfo {
-    key ID: Integer;
-    name: String(1111);
-}
-
-
-aspect additionalInfo{
-    genre: String(100);
-    language: String(200);
 }
