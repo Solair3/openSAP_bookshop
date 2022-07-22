@@ -15,11 +15,15 @@ entity Books : managed {
 entity Magazines : Products {
     publisher: String;
 }
-
+@cds.autoexpose
 entity Authors : managed {
-  key ID   : Integer;
-  name     : String(111);
-  books    : Association to many Books on books.author = $self;
+  key ID : Integer;
+  name   : String(111);
+  dateOfBirth  : Date;
+  dateOfDeath  : Date;
+  placeOfBirth : String;
+  placeOfDeath : String;
+  books  : Association to many Books on books.author = $self;
 }
 
 entity Orders : cuid, managed {
