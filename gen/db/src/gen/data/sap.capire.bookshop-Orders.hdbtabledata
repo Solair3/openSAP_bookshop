@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "imports": [
+    {
+      "target_table": "SAP_CAPIRE_BOOKSHOP_ORDERS",
+      "source_data": {
+        "data_type": "CSV",
+        "file_name": "sap.capire.bookshop-Orders.csv",
+        "has_header": true,
+        "type_config": {
+          "delimiter": ";"
+        }
+      },
+      "import_settings": {
+        "import_columns": [
+          "ID",
+          "MODIFIEDAT",
+          "CREATEDAT",
+          "CREATEDBY",
+          "MODIFIEDBY",
+          "ORDERNO",
+          "CURRENCY_CODE"
+        ],
+        "include_filter": []
+      },
+      "column_mappings": {
+        "ID": "ID",
+        "MODIFIEDAT": "modifiedAt",
+        "CREATEDAT": "createdAt",
+        "CREATEDBY": "createdBy",
+        "MODIFIEDBY": "modifiedBy",
+        "ORDERNO": "OrderNo",
+        "CURRENCY_CODE": "currency_code"
+      }
+    }
+  ]
+}
